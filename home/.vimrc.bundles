@@ -1,0 +1,41 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Git {
+  Bundle 'tpope/vim-fugitive'
+  Bundle 'airblade/vim-gitgutter'
+" }
+
+" General programming {
+  Bundle 'scrooloose/syntastic'
+"
+" }
+" General {
+  Bundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Bundle 'scrooloose/nerdtree.git'
+  "  Bundle 'kien/ctrlp.vim'
+
+  "Bundle '/usr/local/opt/fzf'
+  Bundle 'junegunn/fzf.vim'
+
+  Bundle 'mileszs/ack.vim'
+  Bundle 'wikitopian/hardmode'
+  Bundle 'takac/vim-hardtime'
+  Bundle 'scrooloose/nerdcommenter'
+  Bundle 'vim-scripts/gitignore'
+  Bundle 'vim-airline/vim-airline'
+  Bundle 'vim-airline/vim-airline-themes'
+  Bundle 'easymotion/vim-easymotion'
+" }
+"
+" Ruby on Rails {
+  Bundle 'kchmck/vim-coffee-script'
+  Bundle 'tpope/vim-haml'
+" }
+
+call vundle#end()            " required
+" filetype Bundle indent on    " required
