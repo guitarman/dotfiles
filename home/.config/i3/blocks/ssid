@@ -1,0 +1,10 @@
+#!/bin/bash
+
+SYMBOL=" "
+SSID_NAME=$(iwgetid -r)
+
+if [[ $SSID_NAME != "" ]] ; then
+  echo "$SYMBOL$SSID_NAME"
+  echo "$SYMBOL$SSID_NAME"
+  echo
+fi
