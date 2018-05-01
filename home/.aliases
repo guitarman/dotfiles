@@ -16,3 +16,5 @@ alias p="cd ~/Work/coding"
 alias g="git"
 alias h="history"
 alias j="jobs"
+
+alias d="~/bin/dropbox.py"
