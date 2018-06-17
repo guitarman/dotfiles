@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+max_brightness=`pkexec /usr/lib/gnome-settings-daemon/gsd-backlight-helper --get-max-brightness`
+current_brightness=`pkexec /usr/lib/gnome-settings-daemon/gsd-backlight-helper --get-brightness`
+percent=$(($current_brightness * 100 / $max_brightness))
+
+new_percent=$(($percent $1 $2))
+new_brightness=$(($max_brightness * $new_percent / 100))
+new_brightness=$(($new_brightness > $max_brightness ? $max_brightness : $new_brightness))
+new_brightness=$(($new_brightness < 0 ? 0 : $new_brightness))
+
+pkexec /usr/lib/gnome-settings-daemon/gsd-backlight-helper --set-brightness $new_brightness
