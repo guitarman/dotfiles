@@ -118,9 +118,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-#bindsym $mod+m move workspace to output up
 bindsym $mod+Ctrl+greater move workspace to output left
-#bindsym $mod+Ctrl+/ move workspace to output left
+bindsym $mod+Ctrl+less move workspace to output up
 
 set $uc     #303030
 set $ac     #000000
