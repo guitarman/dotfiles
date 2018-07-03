@@ -121,8 +121,8 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Ctrl+greater move workspace to output left
 bindsym $mod+Ctrl+less move workspace to output up
 
-set $uc     #303030
-set $ac     #000000
+set $uc     #000000
+set $ac     #262832
 
 client.focused              $ac        $ac         white
 client.unfocused            $uc        $uc         white
