@@ -1,0 +1,41 @@
+#!/bin/bash
+
+function battery_status {
+  BATTERY_STATUS=$(acpi -ba  | grep "$1" | grep -o ": [a-zA-Z]*, " | grep -o "[a-zA-Z]*")
+  PERCENT_LEFT=$(acpi -ba  | grep "$1" | grep -o "[0-9]*%" | grep -o "[0-9]*")
+  TIME_LEFT=$(acpi -ba | grep "$1" | grep -o "[0-9][0-9]:[0-9][0-9]")
+
+  SYMBOL_LEVEL=$SYMBOL100
+  [[ $PERCENT_LEFT -le 80 ]] && SYMBOL_LEVEL=$SYMBOL80
+  [[ $PERCENT_LEFT -le 60 ]] && SYMBOL_LEVEL=$SYMBOL60
+  [[ $PERCENT_LEFT -le 40 ]] && SYMBOL_LEVEL=$SYMBOL40
+  [[ $PERCENT_LEFT -le 20 ]] && SYMBOL_LEVEL=$SYMBOL20
+
+  TEXT="$SYMBOL_LEVEL$PERCENT_LEFT"
+
+  if [ "$BATTERY_STATUS" = "Charging" ] ; then
+    TEXT="$TEXT $SYMBOL_FLASH"
+  fi
+
+  if [ $TIME_LEFT ] ; then
+    TEXT="$TEXT ($TIME_LEFT)"
+  fi
+}
+
+SYMBOL_FLASH=" "
+SYMBOL_PLUG=" "
+SYMBOL100=" "
+SYMBOL80=" "
+SYMBOL60=" "
+SYMBOL40=" "
+SYMBOL20=" "
+
+battery_status "Battery 0"
+RESULT="$TEXT /"
+battery_status "Battery 1"
+RESULT="$RESULT $TEXT"
+
+echo $RESULT
+
+
+
