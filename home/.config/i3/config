@@ -154,5 +154,8 @@ bindsym XF86AudioPrev exec playerctl previous
 # lock
 bindsym $mod+Shift+x exec "~/.config/i3/scripts/lock $HOME/.config/lock_icon.png"
 
+bindsym $mod+Shift+o exec "~/.screenlayout/only-notebook.sh"
+bindsym $mod+Shift+p exec "~/.screenlayout/layout.sh"
+
 # exec
 exec_always feh --bg-scale ~/.config/wallpaper.jpg
