@@ -31,7 +31,7 @@ SYMBOL40=" "
 SYMBOL20=" "
 
 battery_status "Battery 0"
-RESULT="$TEXT /"
+RESULT="$TEXT "
 battery_status "Battery 1"
 RESULT="$RESULT $TEXT"
 
