@@ -1,0 +1,7 @@
+#!/bin/bash
+
+FAN=$(tlp-stat -t | grep 'Fan' | grep -o "[0-9]*" | tail -1)
+TEMPERATURE=$(tlp-stat -t | grep 'CPU' | grep -o "[0-9]*")
+
+
+echo " $TEMPERATURE°C $FAN[rpm]"
