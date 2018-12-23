@@ -3,7 +3,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 9
 
 # thin borders
 hide_edge_borders both
@@ -67,7 +67,7 @@ bindsym $mod+a focus parent
 # define workspaces
 set $w1 "1 "
 set $w2 "2 "
-set $w3 "3"
+set $w3 "3 "
 set $w4 "4"
 set $w5 "5"
 set $w6 "6"
@@ -135,7 +135,17 @@ client.unfocused            $uc        $uc         white
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+  bindsym button1 nop
+  tray_output none
+  status_command i3blocks -c ~/.config/i3/i3blocks.conf
+  colors {
+    statusline #888888
+    separator #888888
+
+    background #1c1c1c
+    focused_workspace  #1c1c1c #1c1c1c #5a7575
+    inactive_workspace #1c1c1c #1c1c1c #888888
+  }
 }
 new_window 1pixel
 
@@ -159,6 +169,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # lock
 bindsym $mod+Shift+x exec "~/.config/i3/scripts/lock $HOME/.config/lock_icon.png"
+bindsym $mod+x exec "~/.config/i3/scripts/lock $HOME/.config/lock_icon.png | sudo pm-suspend"
 
 bindsym $mod+Shift+o exec "~/.screenlayout/only-notebook.sh"
 bindsym $mod+Shift+p exec "~/.screenlayout/layout.sh"
