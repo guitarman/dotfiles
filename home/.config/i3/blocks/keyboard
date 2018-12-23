@@ -3,7 +3,6 @@
 SYMBOL=" "
 LAYOUT=$(setxkbmap -query | awk '/layout/{print $2}')
 TEXT="$SYMBOL$LAYOUT"
-COLOR="#FFFFFF"
 
 echo $TEXT
 echo $TEXT
