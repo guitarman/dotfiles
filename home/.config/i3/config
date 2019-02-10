@@ -176,3 +176,5 @@ bindsym $mod+Shift+p exec "~/.screenlayout/layout.sh"
 
 # exec
 exec_always feh --bg-scale ~/.config/wallpaper.jpg
+exec --no-startup-id redshift-gtk
+exec --no-startup-id dropbox start
