@@ -5,11 +5,11 @@ AUDIO_LOW_SYMBOL=' '
 AUDIO_MUTED_SYMBOL=' '
 
 VOLUME=$(pacmd list-sinks | grep "volume: front" | grep -o "[0-9]*%" | head -1)
-MUTED=$(pacmd list-sinks | grep "muted:")
+MUTED=$(pacmd list-sinks | grep "muted:" | head -1)
 VOLUME="${VOLUME%?}"
 
 SYMBOL=$AUDIO_HIGH_SYMBOL
 [[ $VOLUME -le 50 ]] && SYMBOL=$AUDIO_LOW_SYMBOL
-[[ $VOLUME -eq 0 ]] && SYMBOL=$AUDIO_MUTED_SYMBOL
+[[ $MUTED =~ "yes" ]] && SYMBOL=$AUDIO_MUTED_SYMBOL
 
 echo "$SYMBOL$VOLUME%"
