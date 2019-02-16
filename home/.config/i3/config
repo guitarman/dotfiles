@@ -65,16 +65,16 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # define workspaces
-set $w1 "1 "
-set $w2 "2 "
-set $w3 "3 "
+set $w1 ""
+set $w2 ""
+set $w3 ""
 set $w4 "4"
-set $w5 "5"
+set $w5 ""
 set $w6 "6"
 set $w7 "7"
 set $w8 "8"
-set $w9 "9 "
-set $w10 "10 "
+set $w9 ""
+set $w10 ""
 
 # switch to workspace
 bindsym $mod+1 workspace $w1
@@ -175,6 +175,6 @@ bindsym $mod+Shift+o exec "~/.screenlayout/only-notebook.sh"
 bindsym $mod+Shift+p exec "~/.screenlayout/layout.sh"
 
 # exec
-exec_always feh --bg-scale ~/.config/wallpaper.jpg
+exec_always feh --bg-scale ~/.config/wallpaper.png
 exec --no-startup-id redshift-gtk
 exec --no-startup-id dropbox start
