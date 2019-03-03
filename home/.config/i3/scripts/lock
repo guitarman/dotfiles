@@ -29,4 +29,7 @@
     #done
 #fi
 
-i3lock -f -i "$HOME/.config/wallpaper-lock.png" -t
+
+RES=$(xdpyinfo | awk '/dimensions/{print $2}')
+convert -scale $RES "$HOME/.config/wallpaper-lock.png" /tmp/lock.png
+i3lock -f -i /tmp/lock.png -t
