@@ -63,16 +63,16 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # define workspaces
-set $w1 ""
-set $w2 ""
-set $w3 ""
-set $w4 "4"
-set $w5 ""
-set $w6 "6"
-set $w7 "7"
-set $w8 "8"
-set $w9 ""
-set $w10 ""
+set $w1 "1:"
+set $w2 "2:"
+set $w3 "3:"
+set $w4 "4:4"
+set $w5 "5:"
+set $w6 "6:6"
+set $w7 "7:7"
+set $w8 "8:8"
+set $w9 "9:"
+set $w10 "10:"
 
 # switch to workspace
 bindsym $mod+1 workspace $w1
@@ -135,6 +135,7 @@ bar {
   bindsym button1 nop
   tray_output none
   status_command i3blocks -c ~/.config/i3/i3blocks.conf
+  strip_workspace_numbers yes
   colors {
     statusline #888888
     separator #888888
@@ -170,6 +171,7 @@ bindsym $mod+x exec "~/.config/i3/scripts/lock $HOME/.config/lock_icon.png | sud
 
 bindsym $mod+Shift+o exec "~/.screenlayout/only-notebook.sh"
 bindsym $mod+Shift+p exec "~/.screenlayout/layout.sh"
+bindsym $mod+Shift+i exec "~/.screenlayout/home.sh"
 
 # exec
 exec_always feh --bg-scale ~/.config/wallpaper.png
