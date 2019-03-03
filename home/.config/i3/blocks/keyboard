@@ -5,5 +5,3 @@ LAYOUT=$(setxkbmap -query | awk '/layout/{print $2}')
 TEXT="$SYMBOL$LAYOUT"
 
 echo $TEXT
-echo $TEXT
-echo $COLOR
