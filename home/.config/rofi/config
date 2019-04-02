@@ -5,4 +5,4 @@ rofi.width: 500
 
 rofi.color-normal: argb:031c1c1c, #888888, argb:031c1c1c, argb:031c1c1c, #5a7575
 rofi.color-window: argb:dd1c1c1c, argb:dd888888, argb:dd888888
-rofi.font: DejaVu Sans Mono 10
+rofi.font: DejaVu Sans Mono 14
