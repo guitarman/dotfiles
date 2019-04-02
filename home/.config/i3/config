@@ -124,7 +124,7 @@ bindsym $mod+Ctrl+greater move workspace to output left
 bindsym $mod+Ctrl+less move workspace to output up
 
 set $uc     #000000
-set $ac     #262832
+set $ac     #1c1c1c
 
 client.focused              $ac        $ac         white
 client.unfocused            $uc        $uc         white
@@ -133,6 +133,7 @@ client.unfocused            $uc        $uc         white
 # finds out, if available)
 bar {
   bindsym button1 nop
+
   tray_output none
   status_command i3blocks -c ~/.config/i3/i3blocks.conf
   strip_workspace_numbers yes
@@ -146,6 +147,10 @@ bar {
   }
 }
 new_window 1pixel
+
+# keyboard layouts
+bindsym $mod+Ctrl+1 exec setxkbmap -layout us && pkill -RTMIN+2 i3blocks
+bindsym $mod+Ctrl+2 exec setxkbmap -layout sk -variant qwerty && pkill -RTMIN+2 i3blocks
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -167,7 +172,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # lock
 bindsym $mod+Shift+x exec "~/.config/i3/scripts/lock $HOME/.config/lock_icon.png"
-bindsym $mod+x exec "~/.config/i3/scripts/lock $HOME/.config/lock_icon.png | sudo pm-suspend"
+bindsym $mod+x exec "~/.config/i3/scripts/lock_with_sleep $HOME/.config/lock_icon.png"
 
 bindsym $mod+Shift+o exec "~/.screenlayout/only-notebook.sh"
 bindsym $mod+Shift+p exec "~/.screenlayout/layout.sh"
