@@ -62,8 +62,7 @@
   set wildignore+=*/tmp/*
   set wildignore+=*/.sass-cache/*
 
-
-  "" Use relative line numbers
+  " Use relative line numbers
   if exists("&relativenumber")
     set relativenumber
     au BufReadPost * set relativenumber
@@ -94,8 +93,10 @@
 " }
 
 " GUI Settings {
-  set background=dark
-  colorscheme Tomorrow-Night
+  if filereadable(expand("~/.vimrc_background"))
+    let base16colorspace=256
+    source ~/.vimrc_background
+  endif
 " }
 
 " Key Mappings {
@@ -139,8 +140,7 @@
   " }
 
   " Airline {
-      let g:airline_powerline_fonts = 1
-      "let g:airline_theme='ubaryd'
+  "    let g:airline_powerline_fonts = 1
   " }
   " HardMode {
       autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
@@ -158,5 +158,5 @@
     let g:syntastic_auto_loc_list = 1
     let g:syntastic_check_on_open = 1
     let g:syntastic_check_on_wq = 0
-  "
+    let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['java'] }
 " }
