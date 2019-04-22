@@ -153,6 +153,7 @@ new_window 1pixel
 # keyboard layouts
 bindsym $mod+Ctrl+1 exec setxkbmap -layout us && pkill -RTMIN+2 i3blocks
 bindsym $mod+Ctrl+2 exec setxkbmap -layout sk -variant qwerty && pkill -RTMIN+2 i3blocks
+bindsym $mod+Ctrl+k exec "~/.config/i3/scripts/keyboard"
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -185,8 +186,11 @@ assign [class="Google-chrome"] $w2
 assign [class="Firefox.*"] $w3
 for_window [class="Spotify"] move to workspace $w10
 
-# exec
+# Startup items
 exec_always feh --bg-scale ~/.config/wallpaper.png
+
 exec --no-startup-id redshift-gtk
 exec --no-startup-id dropbox start
 exec --no-startup-id compton
+
+exec --no-startup-id "~/.config/i3/scripts/keyboard"
