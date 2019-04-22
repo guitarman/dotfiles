@@ -3,7 +3,7 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 9
+font pango:DejaVu Sans Mono 10
 
 # thin borders
 hide_edge_borders both
@@ -133,6 +133,8 @@ client.unfocused            $uc        $uc         white
 # finds out, if available)
 bar {
   bindsym button1 nop
+  bindsym button4 nop
+  bindsym button5 nop
 
   tray_output none
   status_command i3blocks -c ~/.config/i3/i3blocks.conf
@@ -171,8 +173,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # lock
-bindsym $mod+Shift+x exec "~/.config/i3/scripts/lock $HOME/.config/lock_icon.png"
-bindsym $mod+x exec "~/.config/i3/scripts/lock_with_sleep $HOME/.config/lock_icon.png"
+bindsym $mod+Shift+x exec "~/.config/i3/scripts/lock"
+bindsym $mod+x exec "~/.config/i3/scripts/lock_with_sleep"
 
 bindsym $mod+Shift+o exec "~/.screenlayout/only-notebook.sh"
 bindsym $mod+Shift+p exec "~/.screenlayout/layout.sh"
