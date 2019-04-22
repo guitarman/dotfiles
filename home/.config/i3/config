@@ -180,6 +180,11 @@ bindsym $mod+Shift+o exec "~/.screenlayout/only-notebook.sh"
 bindsym $mod+Shift+p exec "~/.screenlayout/layout.sh"
 bindsym $mod+Shift+i exec "~/.screenlayout/home.sh"
 
+# Application workspace assignments
+assign [class="Google-chrome"] $w2
+assign [class="Firefox.*"] $w3
+for_window [class="Spotify"] move to workspace $w10
+
 # exec
 exec_always feh --bg-scale ~/.config/wallpaper.png
 exec --no-startup-id redshift-gtk
