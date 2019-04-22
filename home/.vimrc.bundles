@@ -24,6 +24,7 @@ call vundle#begin()
   Bundle 'vim-airline/vim-airline'
   Bundle 'vim-airline/vim-airline-themes'
   Bundle 'easymotion/vim-easymotion'
+  Bundle 'tpope/vim-obsession'
 " }
 "
 " Ruby on Rails {
