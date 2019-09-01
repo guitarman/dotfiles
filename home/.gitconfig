@@ -1,0 +1,24 @@
+[core]
+  editor = vim
+
+
+[alias] 
+  l = log --pretty=oneline -n 30 --graph --abbrev-commit
+
+  s = status -s
+  st = status
+
+  # just Pull
+  pl = pull
+
+  # Push
+  p = push
+
+  # Commit all changes
+  ca = !git add -A && git commit -av
+  c = !"git commit --verbose"
+
+  # co is just checkout
+  co = checkout
+
+
