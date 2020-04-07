@@ -4,3 +4,4 @@ xrandr --output HDMI-2 --off --output HDMI-1 --off --output DP-1 --off --output 
 sed -i 's/Xft\.dpi: 92/Xft\.dpi: 120/g' ~/.Xresources
 xrdb ~/.Xresources
 i3 restart
+
