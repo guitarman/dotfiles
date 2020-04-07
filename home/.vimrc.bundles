@@ -12,7 +12,7 @@ call vundle#begin()
 
 " General programming {
   Bundle 'scrooloose/syntastic'
-"
+
 " }
 " General {
   Bundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -25,12 +25,19 @@ call vundle#begin()
   Bundle 'vim-airline/vim-airline-themes'
   Bundle 'easymotion/vim-easymotion'
   Bundle 'tpope/vim-obsession'
-  Bundle 'chriskempson/base16-vim'
 " }
 "
 " Ruby on Rails {
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'tpope/vim-haml'
+" }
+ 
+" Python {
+  Bundle 'vim-python/python-syntax'
+" }
+
+" Theme {
+  Bundle 'chriskempson/base16-vim'
 " }
 
 call vundle#end()            " required

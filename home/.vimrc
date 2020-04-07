@@ -159,4 +159,7 @@
     let g:syntastic_check_on_open = 1
     let g:syntastic_check_on_wq = 0
     let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['java'] }
+    let g:syntastic_python_python_exec = 'python3'
+
+    let python_highlights_all = 1
 " }
