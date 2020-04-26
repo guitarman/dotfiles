@@ -142,9 +142,12 @@
       let NERDTreeShowLineNumbers=1
   " }
 
-  " Airline {
-  "    let g:airline_powerline_fonts = 1
-  " }
+   "Airline {
+      let g:airline_powerline_fonts = 1
+      let linespace = 0
+      "let g:airline_left_sep = ''
+      "let g:airline_right_sep = ''
+   "}
 
   " Syntastic {
       set statusline+=%#warningmsg#
