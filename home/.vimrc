@@ -146,15 +146,6 @@
   "    let g:airline_powerline_fonts = 1
   " }
 
-  " HardMode {
-      autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-      let g:HardMode_level = 'wannabe'
-  " }
-
-  " Hardtime {
-      let g:hardtime_default_on = 1
-  " }
-
   " Syntastic {
       set statusline+=%#warningmsg#
       set statusline+=%{SyntasticStatuslineFlag()}
