@@ -36,7 +36,7 @@
 " }
 
 " VIM UI {
-  "set showmode                " Display the current mode
+  set showmode                " Display the current mode
   set cursorline              " Highlight current line
   highlight clear SignColumn  " SignColumn should match background
 
@@ -92,15 +92,18 @@
   endfunction
 " }
 
-" GUI Settings {
+" Theme Settings {
   if filereadable(expand("~/.vimrc_background"))
     let base16colorspace=256
     source ~/.vimrc_background
   endif
+
+  hi tsxTagName ctermfg=1 guifg=#cc6666
+  hi tsxCloseTagName ctermfg=1 guifg=#cc6666
+  hi tsxAttrib ctermfg=4
 " }
 
 " Key Mappings {
-
   " disable recording
   map q <Nop>
 
@@ -124,42 +127,45 @@
 " Plugins {
 
   " NerdTree {
-    map <C-e> :NERDTreeToggle<CR>
-    map <leader>e :NERDTreeFind<CR>
-    nmap <leader>nt :NERDTreeFind<CR>
+      map <C-e> :NERDTreeToggle<CR>
+      map <leader>e :NERDTreeFind<CR>
+      nmap <leader>nt :NERDTreeFind<CR>
 
-    let NERDTreeShowBookmarks=1
-    let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr', '\.idea', '\.sass-cache']
-    let NERDTreeChDirMode=0
-    let NERDTreeQuitOnOpen=0
-    let NERDTreeMouseMode=2
-    let NERDTreeShowHidden=1
-    let NERDTreeKeepTreeInNewTab=1
-    let g:nerdtree_tabs_open_on_gui_startup=0
-    let NERDTreeShowLineNumbers=1
+      let NERDTreeShowBookmarks=1
+      let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr', '\.idea', '\.sass-cache']
+      let NERDTreeChDirMode=0
+      let NERDTreeQuitOnOpen=0
+      let NERDTreeMouseMode=2
+      let NERDTreeShowHidden=1
+      let NERDTreeKeepTreeInNewTab=1
+      let g:nerdtree_tabs_open_on_gui_startup=0
+      let NERDTreeShowLineNumbers=1
   " }
 
   " Airline {
   "    let g:airline_powerline_fonts = 1
   " }
+
   " HardMode {
       autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
       let g:HardMode_level = 'wannabe'
   " }
+
   " Hardtime {
       let g:hardtime_default_on = 1
   " }
+
   " Syntastic {
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
+      set statusline+=%#warningmsg#
+      set statusline+=%{SyntasticStatuslineFlag()}
+      set statusline+=%*
 
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_check_on_wq = 0
-    let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['java'] }
-    let g:syntastic_python_python_exec = 'python3'
+      let g:syntastic_always_populate_loc_list = 1
+      let g:syntastic_auto_loc_list = 1
+      let g:syntastic_check_on_open = 1
+      let g:syntastic_check_on_wq = 0
+      let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['java'] }
 
-    let python_highlights_all = 1
+      let python_highlight_all = 1
+  " }
 " }

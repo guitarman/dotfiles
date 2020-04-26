@@ -10,11 +10,8 @@ call vundle#begin()
   Bundle 'airblade/vim-gitgutter'
 " }
 
-" General programming {
-  Bundle 'scrooloose/syntastic'
-
-" }
 " General {
+  Bundle 'scrooloose/syntastic'
   Bundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Bundle 'junegunn/fzf.vim'
   Bundle 'scrooloose/nerdtree.git'
@@ -25,15 +22,24 @@ call vundle#begin()
   Bundle 'vim-airline/vim-airline-themes'
   Bundle 'easymotion/vim-easymotion'
   Bundle 'tpope/vim-obsession'
+  Bundle 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
 " }
-"
-" Ruby on Rails {
-  Bundle 'kchmck/vim-coffee-script'
-  Bundle 'tpope/vim-haml'
-" }
- 
+
 " Python {
   Bundle 'vim-python/python-syntax'
+" }
+
+" Coffe script {
+  Bundle 'kchmck/vim-coffee-script'
+" }
+
+" Haml {
+  Bundle 'tpope/vim-haml'
+" }
+
+" React, typescript {
+  Bundle 'leafgarland/typescript-vim'
+  Bundle 'peitalin/vim-jsx-typescript'
 " }
 
 " Theme {
