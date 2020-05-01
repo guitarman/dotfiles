@@ -1,0 +1,46 @@
+#!/usr/bin/env ruby
+
+xrandr_cmd = `xrandr`
+
+ntb_display_name = nil
+ntb_display_setup = { dpi: "120" }
+ext_display_name = nil
+ext_display_setup = { dpi: "92" }
+disconnected = []
+
+lines = xrandr_cmd.split(/\n/)
+lines.each do |line|
+  if /(?<name>.*) connected primary/ =~ line
+    ntb_display_name = name
+  elsif /(?<name>.*) connected/ =~ line
+    ext_display_name = name
+  elsif ntb_display_name && /(?<width>\d+)x(?<height>\d+)/ =~ line
+    ntb_display_setup.merge!({ name: ntb_display_name, resolution: "#{width.to_i}x#{height.to_i}" })
+    ntb_display_name = nil
+  elsif ext_display_name && /(?<width>\d+)x(?<height>\d+)/ =~ line
+    ext_display_setup.merge!({ name: ext_display_name, resolution: "#{width.to_i}x#{height.to_i}" })
+    ext_display_name = nil
+  elsif /(?<name>.*) disconnected/ =~ line
+    disconnected << name
+  end
+end
+
+unless ext_display_setup[:name].nil?
+  disconnected << ntb_display_setup[:name]
+  ntb_display_setup = nil
+end
+
+final_setup = ntb_display_setup || ext_display_setup
+
+setup_cmd = "xrandr"
+setup_cmd << disconnected.reduce("") { |output, display_name| output + " --output #{display_name} --off" }
+setup_cmd << " --output #{final_setup[:name]} --mode #{final_setup[:resolution]} --pos 0x0"
+
+sed_cmd = "sed -i 's/Xft\.dpi:.*/Xft\.dpi: #{final_setup[:dpi]}/g' ~/.Xresources"
+xrdb_cmd = "xrdb ~/.Xresources"
+i3_cmd = "i3 restart"
+
+system setup_cmd
+system sed_cmd
+system xrdb_cmd
+system i3_cmd

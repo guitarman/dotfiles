@@ -177,10 +177,6 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Shift+x exec "~/.config/i3/scripts/lock"
 bindsym $mod+x exec "~/.config/i3/scripts/lock_with_sleep"
 
-bindsym $mod+Shift+o exec "~/.screenlayout/only-notebook.sh"
-bindsym $mod+Shift+p exec "~/.screenlayout/layout.sh"
-bindsym $mod+Shift+i exec "~/.screenlayout/home.sh"
-
 # Application workspace assignments
 assign [class="Google-chrome"] $w2
 assign [class="Firefox.*"] $w3
