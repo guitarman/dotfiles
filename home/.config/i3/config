@@ -66,7 +66,7 @@ bindsym $mod+a focus parent
 set $w1 "1:"
 set $w2 "2:"
 set $w3 "3:"
-set $w4 "4:4"
+set $w4 "4:"
 set $w5 "5:"
 set $w6 "6:6"
 set $w7 "7:7"
@@ -136,6 +136,7 @@ bar {
   bindsym button4 nop
   bindsym button5 nop
 
+  position bottom
   tray_output none
   status_command i3blocks -c ~/.config/i3/i3blocks.conf
   strip_workspace_numbers yes
@@ -190,3 +191,5 @@ exec --no-startup-id dropbox start
 exec --no-startup-id compton
 
 exec --no-startup-id "~/.config/i3/scripts/keyboard"
+
+exec --no-startup-id "~/.config/i3/scripts/xsetrc"

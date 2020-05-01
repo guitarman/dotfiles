@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+xset s off           # screensaver
+#xset s blank        # screensaver blank
+#xset s 300          # after 5*60 seconds
+
+#xset -dpms          # enable DPMS (Energy Star) features.
+xset dpms 1420 1480 1600 # timeouts for standby, suspend, off
