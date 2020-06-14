@@ -164,5 +164,6 @@
       let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['java'] }
 
       let python_highlight_all = 1
+      let g:syntastic_python_python_exec = 'python3'
   " }
 " }
