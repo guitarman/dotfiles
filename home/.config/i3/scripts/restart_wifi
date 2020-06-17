@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+nmcli radio wifi off
+sleep .5
+nmcli radio wifi on
+

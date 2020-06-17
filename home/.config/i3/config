@@ -178,6 +178,11 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Shift+x exec "~/.config/i3/scripts/lock"
 bindsym $mod+x exec "~/.config/i3/scripts/lock_with_sleep"
 
+# restart wifi
+bindsym $mod+Shift+w exec "~/.config/i3/scripts/restart_wifi"
+
+bindsym $mod+Shift+o exec "which ruby | tee -a ~/echo.txt"
+
 # Application workspace assignments
 assign [class="Google-chrome"] $w2
 assign [class="Firefox.*"] $w3
