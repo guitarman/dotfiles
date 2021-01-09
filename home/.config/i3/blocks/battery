@@ -30,9 +30,9 @@ SYMBOL60=" "
 SYMBOL40=" "
 SYMBOL20=" "
 
-battery_status "Battery 0"
-RESULT="$TEXT "
 battery_status "Battery 1"
+RESULT="$TEXT "
+battery_status "Battery 2"
 RESULT="$RESULT $TEXT"
 
 echo $RESULT
