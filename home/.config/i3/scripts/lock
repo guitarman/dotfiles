@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
 RES=$(xdpyinfo | awk '/dimensions/{print $2}')
-convert -scale $RES "$HOME/.config/wallpaper-lock.png" /tmp/lock.png
+convert -scale $RES "$HOME/.config/wallpaper.png" /tmp/lock.png
+convert /tmp/lock.png "$HOME/.config/lock-icon.png" -gravity center -composite -matte /tmp/lock.png
 i3lock -f -i /tmp/lock.png -t
