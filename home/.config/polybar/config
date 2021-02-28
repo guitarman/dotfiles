@@ -1,0 +1,214 @@
+[colors]
+  bg = #1c1c1c
+
+  fg = #dfdfdf
+  fg_alt = #555
+
+  primary_fg = #2eb398
+  alert_fg = #bd2c40
+
+  volume_fg = #c5b38b
+  battery_fg = #8bc3c5
+  cpu_fg = #8ba6c5
+  network_fg = #c58bc1
+  clock_fg = #8bc590
+
+[bar/base]
+  width = 100%
+  height = 45
+  bottom = true
+  fixed-center = true
+
+  background = ${colors.bg}
+  foreground = ${colors.fg}
+
+  line-size = 2
+
+  padding-left = 0
+  padding-right = 2
+
+  font-0 = DejaVu Sans:pixelsize=12;1
+  font-1 = FontAwesome:style=Regular:pixelsize-12;1
+
+  modules-left = i3 padding xwindow
+  modules-right = xkeyboard padding pulseaudio padding battery0 battery1 padding cpu memory padding wlan padding date
+
+  cursor-click = pointer
+  cursor-scroll = ns-resize
+
+[module/padding]
+  type = custom/text
+  content = |
+  content-padding = 2
+  content-foreground = ${colors.bg}
+
+[module/i3]
+  type = internal/i3
+  format = <label-state> <label-mode>
+  index-sort = true
+  wrapping-scroll = false
+
+  label-mode-padding = 2
+  label-mode-foreground = #000
+  label-mode-background = ${colors.primary_fg}
+
+  label-focused = %index%
+  label-focused-foreground= ${colors.primary_fg}
+  label-focused-padding = 2
+
+  label-unfocused = %index%
+  label-unfocused-padding = 2
+
+  label-visible = %index%
+  label-visible-padding = ${self.label-focused-padding}
+
+  label-urgent = %index%
+  label-urgent-background = ${colors.alert_fg}
+  label-urgent-padding = 2
+
+[module/xwindow]
+  type = internal/xwindow
+  label = %title:0:300:...%
+  label-padding = 1
+
+[module/xkeyboard]
+  type = internal/xkeyboard
+  blacklist-0 = num lock
+
+  format = <label-layout>
+
+  label-layout = %name%
+  label-layout-padding = 1
+
+[module/pulseaudio]
+  type = internal/pulseaudio
+  mapped = true
+
+  format-volume = <label-volume>
+  format-volume-prefix = 
+  format-volume-prefix-foreground = ${colors.volume_fg}
+  label-volume = %percentage%%
+
+  label-volume-foreground = ${colors.volume_fg}
+  label-volume-padding = 1
+
+  label-muted = muted
+  label-muted-foreground = ${colors.fg_alt}
+  label-muted-padding = 1
+
+  click-right = pavucontrol
+
+[module/battery-base]
+  type = internal/battery
+  interval = 5
+  full-at = 98
+  time-format = %H:%M
+
+  format-charging = <label-charging>
+  format-charging-prefix = 
+  format-charging-prefix-foreground = ${colors.battery_fg}
+
+  format-discharging = <label-discharging>
+  format-discharging-prefix = 
+  format-discharging-prefix-foreground = ${colors.battery_fg}
+
+  format-full = <label-full>
+  format-full-prefix = 
+  format-full-prefix-foreground = ${colors.battery_fg}
+
+  label-full = %percentage%%
+  label-full-foreground = ${colors.battery_fg}
+  label-full-padding = 1
+
+  label-charging = %percentage%% (%time%)
+  label-charging-foreground = ${colors.battery_fg}
+  label-charging-padding = 1
+
+  label-discharging = %percentage%% (%time%)
+  label-discharging-foreground = ${colors.battery_fg}
+  label-discharging-padding = 1
+
+[module/battery0]
+  inherit = module/battery-base
+  battery = BAT0
+  adapter = ADP1
+
+[module/battery1]
+  inherit = module/battery-base
+  battery = BAT1
+  adapter = ADP1
+
+  format-full-prefix-padding-left = 1
+  format-charging-prefix-padding-left = 1
+  format-discharging-prefix-padding-left = 1
+
+[module/cpu]
+  type = internal/cpu
+  interval = 2
+
+  format-prefix = 
+  format-prefix-foreground = ${colors.cpu_fg}
+
+  label = %percentage:2%%
+  label-padding = 1
+  label-foreground = ${colors.cpu_fg}
+
+[module/memory]
+  type = internal/memory
+  interval = 2
+
+  format-prefix = 
+  format-prefix-padding-left = 1
+  format-prefix-foreground = ${colors.cpu_fg}
+
+  label = %gb_used% %gb_swap_used%
+  label-padding = 1
+  label-foreground = ${colors.cpu_fg}
+
+[module/wlan]
+  type = internal/network
+  interface = wlp3s0
+  interval = 3.0
+
+  format-connected = <label-connected>
+  format-connected-prefix= 
+  format-connected-prefix-foreground = ${colors.network_fg}
+
+  label-connected-padding = 1
+  label-connected = %essid%
+  label-connected-foreground = ${colors.network_fg}
+
+  format-disconnected = <label-disconnected>
+  label-disconnected = disconnected
+  label-disconnected-foreground = ${colors.fg_alt}
+
+[module/date]
+  type = internal/date
+  interval = 5
+
+  date =
+  date-alt = %Y-%m-%d
+
+  time = %H:%M
+  time-alt = %H:%M:%S
+
+  format-prefix = 
+  format-prefix-foreground = ${colors.clock_fg}
+
+  label = %date% %time%
+  label-foreground = ${colors.clock_fg}
+  label-padding = 1
+
+[settings]
+  screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+  margin-top = 5
+  margin-bottom = 5
+
+; vim:ft=dosini
