@@ -81,9 +81,8 @@
 
   autocmd BufNewFile,BufRead *.coffee set filetype=coffee
   autocmd BufNewFile,BufRead *.hamlc set filetype=haml
-
-  autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
-  autocmd FileType typescript setlocal shiftwidth=4 softtabstop=4 expandtab
+  autocmd BufNewFile,BufRead *.tsx setlocal shiftwidth=4 softtabstop=4 expandtab
+  autocmd BufNewFile,BufRead *.ts setlocal shiftwidth=4 softtabstop=4 expandtab
 
   " Strip trailing whitespace (,ss)
   function! StripWhitespace()
