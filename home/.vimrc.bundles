@@ -27,6 +27,7 @@ call vundle#begin()
 
 " Python {
   Bundle 'vim-python/python-syntax'
+  Bundle 'davidhalter/jedi-vim'
 " }
 
 " Coffe script {
@@ -38,12 +39,14 @@ call vundle#begin()
 " }
 
 " React, typescript {
-  Bundle 'leafgarland/typescript-vim'
+"  Bundle 'leafgarland/typescript-vim'
   Bundle 'peitalin/vim-jsx-typescript'
 " }
 
 " Theme {
   Bundle 'chriskempson/base16-vim'
+  Bundle 'joshdick/onedark.vim'
+  Bundle 'sonph/onehalf', { 'rtp': 'vim' }
 " }
 
 call vundle#end()            " required
