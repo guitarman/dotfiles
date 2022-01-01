@@ -16,7 +16,7 @@
 [bar/base]
   width = 100%
   height = 45
-  bottom = true
+  bottom = false
   fixed-center = true
 
   background = ${colors.bg}
