@@ -131,6 +131,12 @@ client.unfocused            $uc        $uc         white
 
 new_window 1pixel
 
+#gaps setup
+for_window [class=".*"] border pixel 0
+
+gaps inner 10
+smart_gaps on
+
 # keyboard layouts
 bindsym $mod+Ctrl+1 exec setxkbmap -layout us && pkill -RTMIN+2 i3blocks
 bindsym $mod+Ctrl+2 exec setxkbmap -layout sk -variant qwerty && pkill -RTMIN+2 i3blocks
