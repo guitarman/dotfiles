@@ -5,12 +5,8 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias ~="cd ~" # `cd` is probably faster to type though
+alias ~="cd ~"
 alias -- -="cd -"
-
-# Disk utilities
-alias cp="cp -i" # confirm overwrite
-alias df="df -h" # human readable sizes
 
 # Folders shortcuts
 alias db="cd ~/Dropbox"
@@ -24,4 +20,17 @@ alias g="git"
 alias h="history"
 alias j="jobs"
 alias more=less
+
+# Disk utilities
+alias cp="cp -i" # confirm overwrite
+alias df="df -h" # human readable sizes
+
+# Set base16 theme to tomorrow-night
+alias sc="$HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh tomorrow-night"
+
+# Enable colors
+alias ls='ls --color=auto'
+alias grep='grep --colour=auto'
+alias egrep='egrep --colour=auto'
+alias fgrep='fgrep --colour=auto'
 

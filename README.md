@@ -11,3 +11,4 @@ pacman -S ack blueman bluez bluez-utils brightnessctl feh git \
 ```
 
 Make sure you also install [pyenv](https://github.com/pyenv/pyenv) and [rbenv](https://github.com/rbenv/rbenv) with latest ruby and python versions respectively.
+Recommended is also to setup [Base16 Shell](https://github.com/chriskempson/base16-shell) as most of the theme setup are relying on this.
