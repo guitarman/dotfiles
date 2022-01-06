@@ -6,7 +6,7 @@ This repository contains several files for [i3-gaps](https://github.com/Airblade
 configurations will work properly, it is recommended to install these packages:
 
 ```
-pacman -S blueman bluez bluez-utils brightnessctl feh git \
+pacman -S ack blueman bluez bluez-utils brightnessctl feh git \
   i3lock i3-gaps polybar rofi xorg-xdpyinfo vim
 ```
 
