@@ -8,6 +8,10 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
+# Disk utilities
+alias cp="cp -i" # confirm overwrite
+alias df="df -h" # human readable sizes
+
 # Folders shortcuts
 alias db="cd ~/Dropbox"
 alias dl="cd ~/Downloads"
@@ -19,4 +23,5 @@ alias d="~/bin/dropbox.py"
 alias g="git"
 alias h="history"
 alias j="jobs"
+alias more=less
 
